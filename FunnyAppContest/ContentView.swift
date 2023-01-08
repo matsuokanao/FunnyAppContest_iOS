@@ -31,12 +31,12 @@ struct ContentView: View {
                 Text("M高等学校へようこそ！！")
 
                 NavigationLink(destination: SchoolingView()){
-                    Text("スクーリングに行こうよ！！")
+                    Text("スクーリングに行こう！！")
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 5))
                         .foregroundColor(.black)
                 }
                 NavigationLink(destination: TestView()){
-                    Text("テストに行こうよ！とっても楽しみだね！")
+                    Text("テストに行こう！とっても楽しみだね！")
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 5))
                         .foregroundColor(.black)
                         .scaleEffect(angle)
