@@ -24,26 +24,43 @@ struct ContentView: View {
         let spectrum = Gradient(colors: [.red,.yellow,.blue,.green,.purple,.red])
         //12時の方向からグラデーション開始
         let conic = AngularGradient(gradient: spectrum, center: .center,angle: .degrees(-90))
+            
         ZStack{
             //背景色指定
             (conic)
             VStack(spacing: 50){
-                Text("M高等学校へようこそ！！")
-
+                Text("スクーリング予約サイト")
+                    .font(.system(.title, design: .serif))
+                    .bold()
+                
+                NavigationLink(destination: MView()){
+                    Text("スクーリング日程を予約しよう")
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 2))
+                        .foregroundColor(.blue)
+                        .bold()
+                }
                 NavigationLink(destination: SchoolingView()){
-                    Text("スクーリングに行こう！！")
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 5))
-                        .foregroundColor(.black)
+                    Text("スクーリングの予約をキャンセルしたい")
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 2))
+                        .foregroundColor(.red)
+                        .bold()
                 }
                 NavigationLink(destination: TestView()){
-                    Text("テストに行こう！とっても楽しみだね！")
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 5))
-                        .foregroundColor(.black)
+                    Text("自分のスクーリング日程を確認する")
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth:2))
+                        .foregroundColor(.yellow)
                         .scaleEffect(angle)
+                        .bold()
                 }
               }
             }
         }
+    }
+}
+
+struct MView: View {
+    var body: some View {
+        Text("スクーリング").font(.title)
     }
 }
 
