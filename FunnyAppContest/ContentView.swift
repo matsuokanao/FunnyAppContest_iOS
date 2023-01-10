@@ -18,35 +18,33 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     var body: some View {
-        
         NavigationView{
-        //背景色設定
-        let spectrum = Gradient(colors: [.red,.yellow,.blue,.green,.purple,.red])
-        //12時の方向からグラデーション開始
-        let conic = AngularGradient(gradient: spectrum, center: .center,angle: .degrees(-90))
             
         ZStack{
             //背景
                  Color.indigo
             VStack(spacing: 20){
-                HStack(spacing: 20){
+                Image("image")
+                    .frame(width: 3500, height: 210)
+                    .overlay(
+                HStack(spacing: 0){
                     Text("M高へ")
                         .fontWeight(.black)
-                        .kerning(10)
+                        .kerning(5)
                         .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .foregroundColor(.red)
                         .shadow(color: .black,radius: 2,
                                 x :4,
                                 y:3)
                     Text(" ようこそ")
                         .fontWeight(.black)
-                        .kerning(10)
+                        .kerning(5)
                         .font(.largeTitle)
-                        .foregroundColor(.white)
+                        .foregroundColor(.yellow)
                         .shadow(color: .black,radius: 2,
                                 x :4,
                                 y:3)
-                }
+                })
                 
                 NavigationLink(destination: MView()){
                     Text("あなたは番目の訪問者です！")
@@ -65,6 +63,7 @@ struct ContentView: View {
                         .foregroundColor(.yellow)
                         .scaleEffect(angle)
                         .bold()
+                
                 }
               }
             }
