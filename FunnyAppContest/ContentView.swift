@@ -26,18 +26,32 @@ struct ContentView: View {
         let conic = AngularGradient(gradient: spectrum, center: .center,angle: .degrees(-90))
             
         ZStack{
-            //背景色指定
-            (conic)
-            VStack(spacing: 50){
-                Text("スクーリング予約サイト")
-                    .font(.system(.title, design: .serif))
-                    .bold()
+            //背景
+                 Color.indigo
+            VStack(spacing: 20){
+                HStack(spacing: 20){
+                    Text("M高へ")
+                        .fontWeight(.black)
+                        .kerning(10)
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .shadow(color: .black,radius: 2,
+                                x :4,
+                                y:3)
+                    Text(" ようこそ")
+                        .fontWeight(.black)
+                        .kerning(10)
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .shadow(color: .black,radius: 2,
+                                x :4,
+                                y:3)
+                }
                 
                 NavigationLink(destination: MView()){
-                    Text("スクーリング日程を予約しよう")
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 2))
-                        .foregroundColor(.blue)
-                        .bold()
+                    Text("あなたは番目の訪問者です！")
+                        .foregroundColor(.black)
+                        
                 }
                 NavigationLink(destination: SchoolingView()){
                     Text("スクーリングの予約をキャンセルしたい")
