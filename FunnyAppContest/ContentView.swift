@@ -53,22 +53,36 @@ struct ContentView: View {
                         
                 }
                 NavigationLink(destination: SchoolingView()){
-                    Text("ネットを駆使した未来の高校！！")
-                        .foregroundColor(.red)
-                        .bold()
-                        .background(Color.white)
+                    VStack{
+                        Text("届けよう、未来の教育の''当たり前''！！")
+                            .foregroundColor(.red)
+                            .bold()
+                            .background(Color.white)
+                        Text("ネットを駆使した未来の高校って？")
+                            .foregroundColor(.red)
+                            .bold()
+                            .background(Color.white)
+                    }
                 }
                 NavigationLink(destination: TestView()){
-                    VStack{
-                        Text("届けよう、未来の教育の''当たり前''")
+                    VStack(spacing: 5){
+                        Text("ー令和5年度新入生ー 出願受付中")
                             .foregroundColor(.red)
                             .scaleEffect(angle)
                             .bold()
                             .background(Color.white)
+                    }
+                }
+                NavigationLink(destination: adoptionView()){
+                    VStack(spacing: 5){
                         Text("未来の教育を作るエンジニア大募集！！")
-                            .foregroundColor(.red)
+                            .foregroundColor(.white)
+                            .padding()
+                            .border(Color.red, width: 1.0)
                         Text("仲間として一緒に開発しませんか?")
-                            .foregroundColor(.red)
+                            .foregroundColor(.white)
+                            .padding()
+                            .border(Color.red, width: 1.0)
                     }
                  }
               }
@@ -91,10 +105,15 @@ struct SchoolingView: View {
 
 struct TestView: View{
     var body: some View{
-        Text("テスト")
+        Text("願書")
     }
 }
- 
+
+struct adoptionView: View{
+    var body: some View{
+        Text("採用ページ")
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
