@@ -44,27 +44,33 @@ struct ContentView: View {
                         .shadow(color: .black,radius: 2,
                                 x :4,
                                 y:3)
+                    
                 })
                 
                 NavigationLink(destination: MView()){
-                    Text("あなたは番目の訪問者です！")
+                    Text("あなたは100番目の訪問者です！")
                         .foregroundColor(.black)
                         
                 }
                 NavigationLink(destination: SchoolingView()){
-                    Text("スクーリングの予約をキャンセルしたい")
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth: 2))
+                    Text("ネットを駆使した未来の高校！！")
                         .foregroundColor(.red)
                         .bold()
+                        .background(Color.white)
                 }
                 NavigationLink(destination: TestView()){
-                    Text("自分のスクーリング日程を確認する")
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.black, lineWidth:2))
-                        .foregroundColor(.yellow)
-                        .scaleEffect(angle)
-                        .bold()
-                
-                }
+                    VStack{
+                        Text("届けよう、未来の教育の''当たり前''")
+                            .foregroundColor(.red)
+                            .scaleEffect(angle)
+                            .bold()
+                            .background(Color.white)
+                        Text("未来の教育を作るエンジニア大募集！！")
+                            .foregroundColor(.red)
+                        Text("仲間として一緒に開発しませんか?")
+                            .foregroundColor(.red)
+                    }
+                 }
               }
             }
         }
